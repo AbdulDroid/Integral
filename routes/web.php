@@ -29,3 +29,4 @@ $router->get('/transferAccount', 'WalletController@transferAccount');
 $router->get('/fundFromCard', 'WalletFundingController@fundFromCard');
 $router->get('/accountValidation', 'WalletFundingController@fundingAccountValidation');
 $router->get('/fundAcct2Wallet', 'WalletFundingController@fundingAccountToWallet');
+$router->get('/internetBanking', 'WalletFundingController@fundingInternetBanking');

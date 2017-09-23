@@ -126,8 +126,37 @@ class WalletFundingController extends Controller
         $status = $response['status'];
         $data = $response['data'];
         var_dump($data);
- 
 
+    }
+
+    public function fundingInternetBanking(){
+        $token = $this->getToken();
+
+        $headers = array('content-type' => 'application/json','Authorization'=> $token);
+
+        $query = array(
+             'amount'=>10,
+             'apiKey'=>"your_api_key",
+             'charge_with'=>"ext_account",
+             'charge_auth'=>"INTERNETBANKING",
+             'firstname'=>"Okoi",
+             'lastname'=>"Ibiang",
+             'phonenumber' => "+2348067415830",
+             'email'=>"aaa@bbb.com",
+             'medium'=>"desktop",
+             'sender_bank'=> "058",
+             'recipient'=>"wallet",
+             'redirecturl'=>"http:/localhost:1111/callback");
+
+        $body = \Unirest\Request\Body::json($query);
+
+        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer', $headers, $body);
+
+        $response = json_decode($response->raw_body, TRUE);
+        $status = $response['status'];
+        $data = $response['data'];
+        var_dump($status);
+        var_dump($data);
     }
 
 }
