@@ -26,3 +26,6 @@ $router->get('/createWallet', 'WalletController@createWallet');
 $router->get('/transfer', 'WalletController@transfer');
 
 $router->get('/transferAccount', 'WalletController@transferAccount');
+$router->get('/fundFromCard', 'WalletFundingController@fundFromCard');
+$router->get('/accountValidation', 'WalletFundingController@fundingAccountValidation');
+$router->get('/fundAcct2Wallet', 'WalletFundingController@fundingAccountToWallet');
