@@ -98,6 +98,8 @@ class WalletFundingController extends Controller
     }
 
     public function fundingAccountToWallet(){
+        echo "WORKS ONLY WITH ACCESS BANK!!\n\n";
+        echo "GET OTP BY DIALING *901*4*1#\n\n";
         $token = $this->getToken();
 
         $headers = array('content-type' => 'application/json','Authorization'=> $token);
